@@ -9,8 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            Image("MG")
+                .resizable()
+                .ignoresSafeArea()
+            
+            HStack {
+                Text("Browse Top Ten Music By Artist")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+            }
+            Spacer()
+            
+        }
     }
 }
 
