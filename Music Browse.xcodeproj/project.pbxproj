@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD61DA2826E1A758006D5BA5 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = DD61DA2726E1A758006D5BA5 /* Preview Content */; };
 		DD6F968826E046030032BDE9 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6F968726E046030032BDE9 /* APIDataModel.swift */; };
 		DD73D90826DC592A00F6B435 /* Music_BrowseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */; };
 		DD73D90A26DC592A00F6B435 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D90926DC592A00F6B435 /* ContentView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD61DA2726E1A758006D5BA5 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		DD6F968726E046030032BDE9 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
 		DD73D90426DC592A00F6B435 /* Music Browse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Browse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music_BrowseApp.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */,
 				DD73D90926DC592A00F6B435 /* ContentView.swift */,
 				DD73D90B26DC592F00F6B435 /* Assets.xcassets */,
+				DD61DA2726E1A758006D5BA5 /* Preview Content */,
 				DD73D91026DC592F00F6B435 /* Info.plist */,
 				DD6F968726E046030032BDE9 /* APIDataModel.swift */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD61DA2826E1A758006D5BA5 /* Preview Content in Resources */,
 				DD73D90C26DC592F00F6B435 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +418,7 @@
 				DEVELOPMENT_TEAM = TKJKGP9CFJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Music Browse/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +426,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Music-Browse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -436,7 +440,7 @@
 				DEVELOPMENT_TEAM = TKJKGP9CFJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Music Browse/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +448,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Music-Browse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

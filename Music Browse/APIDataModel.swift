@@ -13,9 +13,9 @@ struct ArtistResponse:Codable{
 
 
 struct ArtistSong:Codable{
-    let id:Int
-    let trackName:String
+    let trackId:Int
     let artistName:String
-    let artistImageUrl:String
+    let trackName:String
+    let artworkUrl60:String
     
 }

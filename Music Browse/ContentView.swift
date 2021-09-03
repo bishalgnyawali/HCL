@@ -23,9 +23,10 @@ struct ProgressIndicatorView:View{
 struct ArtistDetailsView:View{
     @State var results=[ArtistSong]()
     var ArtistName:String
+    
     var body:some View{
         NavigationView{
-            List(results,id:\.id){ item in
+            List(results,id:\.trackId){ item in
                 VStack(alignment:.leading){
                     Text(item.trackName)
                 }
@@ -35,24 +36,32 @@ struct ArtistDetailsView:View{
     }
     
     func ApiCall(){
-        guard let url=URL(string: "https://itunes.apple.com/search?term=coldplay&entity=song")
+        let newString = ArtistName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        guard let url=URL(string: "https://itunes.apple.com/search?term="+newString+"&entity=song")
         else{
             print("Invalid URL")
             return
         }
+        
         let request=URLRequest(url: url)
+        
         URLSession.shared.dataTask(with:request){ data,response,error in
+            
             if let data=data{
+                //print("true")
                 if let decodedResponse=try?JSONDecoder().decode(ArtistResponse.self,from:data){
                     DispatchQueue.main.async{
                         self.results=decodedResponse.results
                     }
                     return
                 }
-                print("Api fetch failed")
+                
             }
+            print("Fetch Failed:")
+            
         }.resume()
     }
+    //print(results)
 }
 
 
@@ -121,7 +130,7 @@ struct ArtistView: View {
 
 //Main Container
 struct ContentView: View {
-    
+    //@State var results=[ArtistSong]()
     var body: some View {
         NavigationView{
             ZStack{
