@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-//Indicator page blocking user interaction when api data is being loaded
 
+//Indicator page blocking user interaction when api data is being loaded
 struct ProgressIndicatorView:View{
     var body:some View{
         ZStack{
@@ -17,28 +17,64 @@ struct ProgressIndicatorView:View{
         
     }
 }
+
+
 //new page when api load gets successful
 struct ArtistDetailsView:View{
+    @State var results=[ArtistSong]()
+    var ArtistName:String
     var body:some View{
-        Text("Hello Artist")
+        NavigationView{
+            List(results,id:\.id){ item in
+                VStack(alignment:.leading){
+                    Text(item.trackName)
+                }
+            }.onAppear(perform:ApiCall)
+            //Text(ArtistName)
+        }.navigationTitle("Song's by "+ArtistName)
+    }
+    
+    func ApiCall(){
+        guard let url=URL(string: "https://itunes.apple.com/search?term=coldplay&entity=song")
+        else{
+            print("Invalid URL")
+            return
+        }
+        let request=URLRequest(url: url)
+        URLSession.shared.dataTask(with:request){ data,response,error in
+            if let data=data{
+                if let decodedResponse=try?JSONDecoder().decode(ArtistResponse.self,from:data){
+                    DispatchQueue.main.async{
+                        self.results=decodedResponse.results
+                    }
+                    return
+                }
+                print("Api fetch failed")
+            }
+        }.resume()
     }
 }
 
+
+
+
+//View for each Artist and Navigation link to each artist Songs
 struct EachArtistView:View{
     var artist:String
     var icon:String
+    
     var body:some View{
         
         NavigationLink(
-            destination:ProgressIndicatorView()){
+            destination:ArtistDetailsView(ArtistName:artist)){
                 //Image("MG")
                     HStack {
 //                        ZStack{
-                            
-                            Image(systemName: icon)
-                                .foregroundColor(Color.black).padding()
+                        Text(artist).foregroundColor(Color.black)
                             Spacer()
-                            Text(artist)
+                            Image(systemName: icon)
+                                .foregroundColor(Color.white).padding()
+                            
                                  
                         //}
                             //.padding(.horizontal,20)
@@ -55,7 +91,7 @@ struct EachArtistView:View{
                 
     
 
-
+//Sub Components that genearate clickable area for each artist
 struct ArtistView: View {
     var list=["Miley Cyrus","Britney Spears","Michael Jackson","Jennifer Lopez","Justin Bieber","Selena Gomez","Rihana","Beyonce","Katy Perry","Madonna"]
     var icon=["mail","mail","mail","mail","mail","mail","mail","mail","mail","mail"]
@@ -81,7 +117,11 @@ struct ArtistView: View {
     
 }
 
+
+
+//Main Container
 struct ContentView: View {
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -97,7 +137,7 @@ struct ContentView: View {
                         .foregroundColor(Color.blue)
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding()
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+                        .border(Color.black)
                         .font(.system(size: 30, weight: .heavy, design: .default))
                     //Spacer()
                     VStack{
@@ -114,11 +154,12 @@ struct ContentView: View {
             }
             
             //.ignoresSafeArea()
-            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.black]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: .bottomTrailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.black]), startPoint: .leading, endPoint: .bottomTrailing))
             .ignoresSafeArea()
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
