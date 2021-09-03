@@ -12,7 +12,9 @@ struct ProgressIndicatorView:View{
     var body:some View{
         ZStack{
             //Image("MG")
-            ProgressView().font(.largeTitle)
+            ProgressView("Loading")
+                .scaleEffect(1.5, anchor: .center)
+                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
         }
         
     }
@@ -22,22 +24,28 @@ struct ProgressIndicatorView:View{
 //new page when api load gets successful
 struct ArtistDetailsView:View{
     @State var results=[ArtistSong]()
+    @State private var progress:Bool=false
     var ArtistName:String
-    
+    //var title:String
     var body:some View{
         NavigationView{
-            List(results,id:\.trackId){ item in
-                VStack(alignment:.leading){
-                    Text(item.trackName)
-                }
-            }.onAppear(perform:ApiCall)
-            //Text(ArtistName)
-        }.navigationTitle("Song's by "+ArtistName)
+            if(progress==true){
+                List(results,id:\.trackId){ item in
+                    VStack(alignment:.leading){
+                        Text(item.trackName)
+                    }
+                }.onAppear(perform:ApiCall)
+                //Text(ArtistName)
+            }else{
+                //title=ArtistName
+                ProgressIndicatorView().onAppear(perform:ApiCall)
+            }
+        }.navigationTitle(ArtistName)
     }
     
     func ApiCall(){
         let newString = ArtistName.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-        guard let url=URL(string: "https://itunes.apple.com/search?term="+newString+"&entity=song")
+        guard let url=URL(string: "https://itunes.apple.com/search?term="+newString+"&entity=song&limit=10")
         else{
             print("Invalid URL")
             return
@@ -53,6 +61,7 @@ struct ArtistDetailsView:View{
                     DispatchQueue.main.async{
                         self.results=decodedResponse.results
                     }
+                    progress=true
                     return
                 }
                 
@@ -69,23 +78,27 @@ struct ArtistDetailsView:View{
 
 //View for each Artist and Navigation link to each artist Songs
 struct EachArtistView:View{
+    
     var artist:String
     var icon:String
     
     var body:some View{
-        
+        //ProgressIndicatorView()
+        //ArtistDetailsView(ArtistName:artist)
         NavigationLink(
             destination:ArtistDetailsView(ArtistName:artist)){
                 //Image("MG")
                     HStack {
-//                        ZStack{
-                        Text(artist).foregroundColor(Color.black)
+
+                        Text(artist)
+                            .foregroundColor(Color.black)
+                            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Spacer()
                             Image(systemName: icon)
                                 .foregroundColor(Color.white).padding()
                             
                                  
-                        //}
+                       
                             //.padding(.horizontal,20)
                             
                     }.padding(20)
@@ -102,7 +115,7 @@ struct EachArtistView:View{
 
 //Sub Components that genearate clickable area for each artist
 struct ArtistView: View {
-    var list=["Miley Cyrus","Britney Spears","Michael Jackson","Jennifer Lopez","Justin Bieber","Selena Gomez","Rihana","Beyonce","Katy Perry","Madonna"]
+    var list=["Miley Cyrus","Britney Spears","Michael Jackson","Jennifer Lopez","Justin Bieber","Selena Gomez","Rihana","Bryan Adams","Katy Perry","Madonna"]
     var icon=["mail","mail","mail","mail","mail","mail","mail","mail","mail","mail"]
     var body: some View {
         //Spacer()
@@ -119,6 +132,7 @@ struct ArtistView: View {
                         
                     
                 }.ignoresSafeArea()
+                .opacity(0.8)
            
             
         
@@ -148,6 +162,7 @@ struct ContentView: View {
                         .padding()
                         .border(Color.black)
                         .font(.system(size: 30, weight: .heavy, design: .default))
+                        
                     //Spacer()
                     VStack{
                         ScrollView{
@@ -160,11 +175,10 @@ struct ContentView: View {
                 }.padding(.horizontal,20)
                 
                 
-            }
-            
-            //.ignoresSafeArea()
-            .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.black]), startPoint: .leading, endPoint: .bottomTrailing))
+                
+            }.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.black]), startPoint: .leading, endPoint: .bottomTrailing))
             .ignoresSafeArea()
+            
         }
     }
 }
