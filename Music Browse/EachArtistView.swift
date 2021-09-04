@@ -25,7 +25,7 @@ struct EachArtistView:View{
                             Spacer()
                         Image(systemName: "music.note.list")
                             .foregroundColor(Color.white).padding()
-                            .font(.system(size: 45))
+                            .font(.system(size: 30))
                        
                             //.padding(.horizontal,20)
                     }.padding(20)

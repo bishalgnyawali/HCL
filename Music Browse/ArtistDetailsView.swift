@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ArtistDetailsView:View{
+    @ObservedObject var monitor = NetworkMonitor()
     @State var results=[ArtistSong]()
     @State private var progress:Bool=false
-    //@State private var scroll:Bool=false
+    //@State private var status:String
+   
     //@State private var title:String=""
     var ArtistName:String
+    
     //var title:String
     var body:some View{
         NavigationView{
@@ -62,8 +65,9 @@ struct ArtistDetailsView:View{
                 }
                 //Text(ArtistName)
             }else{
-                //title=ArtistName
-                ProgressIndicatorView().onAppear(perform:ApiCall)
+//
+                monitor.isConnected ? ProgressIndicatorView(status:"Loading").onAppear(perform:ApiCall): ProgressIndicatorView(status:"No Internet Connection").onAppear(perform:ApiCall)
+//                ProgressIndicatorView(status:"Loading").onAppear(perform:ApiCall)
             }
         }.navigationTitle("Top 10 Song's by")
         //.background(Color.blue)
