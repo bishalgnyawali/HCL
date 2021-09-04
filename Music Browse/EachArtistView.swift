@@ -9,7 +9,7 @@ import SwiftUI
 struct EachArtistView:View{
     
     var artist:String
-    var icon:String
+    //var icon:String
     
     var body:some View{
         //ProgressIndicatorView()
@@ -23,7 +23,7 @@ struct EachArtistView:View{
                             .foregroundColor(Color.black)
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             Spacer()
-                        Image(systemName: icon)
+                        Image(systemName: "music.note.list")
                             .foregroundColor(Color.white).padding()
                        
                             //.padding(.horizontal,20)

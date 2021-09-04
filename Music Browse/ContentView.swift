@@ -16,7 +16,7 @@ import SwiftUI
 //Sub Components that genearate clickable area for each artist
 struct ArtistView: View {
     var list=["Miley Cyrus","Britney Spears","Michael Jackson","Jennifer Lopez","Justin Bieber","Spice Girls","Rihana","Bryan Adams","Katy Perry","Madonna"]
-    var icon=["mail","mail","mail","mail","mail","mail","mail","mail","mail","mail"]
+
     var body: some View {
         
         //Spacer()
@@ -27,7 +27,7 @@ struct ArtistView: View {
                     ForEach(0..<list.count){
                         //CustomSignUpView(icon:,text:)
                        
-                            EachArtistView(artist: list[$0], icon:icon[$0])
+                            EachArtistView(artist: list[$0])
                         
                     }
                         
