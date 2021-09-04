@@ -45,15 +45,16 @@ struct ArtistView: View {
 
 //Main Container
 struct ContentView: View {
-    init(){
-//            UITableView.appearance().backgroundColor = .blue
-        
-        }
+//    init(){
+//            UITableView.appearance().backgroundColor = .red
+//
+//        }
     var body: some View {
         NavigationView{
             ZStack(alignment:.leading){
                 Color.red
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .opacity(0.7)
 //                Image("MG")
 //                    .resizable()
 //                    .edgesIgnoringSafeArea(.all)
