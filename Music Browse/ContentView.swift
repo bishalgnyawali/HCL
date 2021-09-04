@@ -52,9 +52,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             ZStack(alignment:.leading){
-                Color.red
+                Color.orange
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                    .opacity(0.7)
+                    .opacity(0.5)
 //                Image("MG")
 //                    .resizable()
 //                    .edgesIgnoringSafeArea(.all)

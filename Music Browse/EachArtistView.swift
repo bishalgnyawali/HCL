@@ -25,13 +25,15 @@ struct EachArtistView:View{
                             Spacer()
                         Image(systemName: "music.note.list")
                             .foregroundColor(Color.white).padding()
+                            .font(.system(size: 45))
                        
                             //.padding(.horizontal,20)
                     }.padding(20)
                     .font(.title)
                     .foregroundColor(Color.white)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.white, Color.black]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: .bottomTrailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), startPoint: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/, endPoint: .bottomTrailing))
                     .cornerRadius(30)
+                    //.opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
                     
             }
         //}

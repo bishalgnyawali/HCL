@@ -24,17 +24,20 @@ struct ArtistDetailsView:View{
                                 .padding()
                                 .frame(maxWidth:.infinity,alignment:.leading)
                                 .font(.title)
-                                //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .bottomTrailing))
+                                
+                                
                             Text("Song Title: "+item.trackName)
                                 .padding()
                                 .frame(maxWidth:.infinity,alignment:.leading)
                                 .font(.title)
-                                //.background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .bottomTrailing))
+    
                                     
                                     
-                                }
-                                .background(LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .bottomTrailing))
-                                .cornerRadius(30)
+                    }//.background(Color.green)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), startPoint: .leading, endPoint: .bottomTrailing))
+                    .opacity(0.9)
+                    .cornerRadius(30)
+                                
                     
                             
                     

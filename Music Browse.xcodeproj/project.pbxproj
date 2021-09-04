@@ -17,6 +17,7 @@
 		DD73D90C26DC592F00F6B435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD73D90B26DC592F00F6B435 /* Assets.xcassets */; };
 		DD73D91A26DC593000F6B435 /* Music_BrowseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D91926DC593000F6B435 /* Music_BrowseTests.swift */; };
 		DD73D92526DC593000F6B435 /* Music_BrowseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D92426DC593000F6B435 /* Music_BrowseUITests.swift */; };
+		DD8F79C126E387AB00252417 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F79C026E387AB00252417 /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DD73D92026DC593000F6B435 /* Music BrowseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Music BrowseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD73D92426DC593000F6B435 /* Music_BrowseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music_BrowseUITests.swift; sourceTree = "<group>"; };
 		DD73D92626DC593000F6B435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8F79C026E387AB00252417 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */,
 				DD73D90926DC592A00F6B435 /* ContentView.swift */,
+				DD8F79C026E387AB00252417 /* NetworkMonitor.swift */,
 				DD5FC99326E2DEF600897A8C /* ArtistDetailsView.swift */,
 				DD5FC99726E34F2D00897A8C /* EachArtistView.swift */,
 				DD5FC99526E2DF8000897A8C /* ProgressIndicatorView.swift */,
@@ -268,6 +271,7 @@
 				DD6F968826E046030032BDE9 /* APIDataModel.swift in Sources */,
 				DD5FC99426E2DEF600897A8C /* ArtistDetailsView.swift in Sources */,
 				DD5FC99826E34F2D00897A8C /* EachArtistView.swift in Sources */,
+				DD8F79C126E387AB00252417 /* NetworkMonitor.swift in Sources */,
 				DD73D90826DC592A00F6B435 /* Music_BrowseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
