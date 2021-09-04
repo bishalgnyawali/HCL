@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD5FC99426E2DEF600897A8C /* ArtistDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FC99326E2DEF600897A8C /* ArtistDetailsView.swift */; };
+		DD5FC99626E2DF8000897A8C /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FC99526E2DF8000897A8C /* ProgressIndicatorView.swift */; };
+		DD5FC99826E34F2D00897A8C /* EachArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FC99726E34F2D00897A8C /* EachArtistView.swift */; };
 		DD61DA2826E1A758006D5BA5 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = DD61DA2726E1A758006D5BA5 /* Preview Content */; };
 		DD6F968826E046030032BDE9 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6F968726E046030032BDE9 /* APIDataModel.swift */; };
 		DD73D90826DC592A00F6B435 /* Music_BrowseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD5FC99326E2DEF600897A8C /* ArtistDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailsView.swift; sourceTree = "<group>"; };
+		DD5FC99526E2DF8000897A8C /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
+		DD5FC99726E34F2D00897A8C /* EachArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachArtistView.swift; sourceTree = "<group>"; };
 		DD61DA2726E1A758006D5BA5 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
 		DD6F968726E046030032BDE9 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
 		DD73D90426DC592A00F6B435 /* Music Browse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Browse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +105,9 @@
 			children = (
 				DD73D90726DC592A00F6B435 /* Music_BrowseApp.swift */,
 				DD73D90926DC592A00F6B435 /* ContentView.swift */,
+				DD5FC99326E2DEF600897A8C /* ArtistDetailsView.swift */,
+				DD5FC99726E34F2D00897A8C /* EachArtistView.swift */,
+				DD5FC99526E2DF8000897A8C /* ProgressIndicatorView.swift */,
 				DD73D90B26DC592F00F6B435 /* Assets.xcassets */,
 				DD61DA2726E1A758006D5BA5 /* Preview Content */,
 				DD73D91026DC592F00F6B435 /* Info.plist */,
@@ -255,7 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD73D90A26DC592A00F6B435 /* ContentView.swift in Sources */,
+				DD5FC99626E2DF8000897A8C /* ProgressIndicatorView.swift in Sources */,
 				DD6F968826E046030032BDE9 /* APIDataModel.swift in Sources */,
+				DD5FC99426E2DEF600897A8C /* ArtistDetailsView.swift in Sources */,
+				DD5FC99826E34F2D00897A8C /* EachArtistView.swift in Sources */,
 				DD73D90826DC592A00F6B435 /* Music_BrowseApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
