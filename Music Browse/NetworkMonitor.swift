@@ -4,7 +4,7 @@
 //
 //  Created by Bishal on 4/9/21.
 //
-
+//this class checks for internet connection status, if its connected value of 'isConnected' variable is true else false
 import Foundation
 import Network
 

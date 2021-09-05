@@ -4,7 +4,7 @@
 //
 //  Created by Bishal on 4/9/21.
 //
-
+//this view displays progressindication if loading displays loading, if no internet connection displays 'No internet connection'
 import SwiftUI
 struct ProgressIndicatorView:View{
     var status:String

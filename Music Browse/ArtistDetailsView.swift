@@ -4,7 +4,7 @@
 //
 //  Created by Bishal on 4/9/21.
 //
-
+//this view fetches api and displays the content in second page of the app
 import SwiftUI
 
 struct ArtistDetailsView:View{

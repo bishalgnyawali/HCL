@@ -3,7 +3,7 @@
 //  Music Browse
 //
 //  Created by Bishal on 4/9/21.
-//
+//this View displays in first page for each of the 10 artist
 
 import SwiftUI
 struct EachArtistView:View{

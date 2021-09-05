@@ -4,7 +4,7 @@
 //
 //  Created by Bishal on 2/9/21.
 //https://itunes.apple.com/search?term=coldplay&entity=song
-
+//API fetch data model for the app
 import Foundation
 
 struct ArtistResponse:Codable{
